@@ -1,5 +1,7 @@
 
-print "Hello World"
+from cli import CommandLineInterface
 
-if 1:
-    print "hello"
+command = CommandLineInterface()
+
+command.help()
+command.loop()
