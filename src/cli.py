@@ -1,7 +1,8 @@
-
 """
 Command Line Interface for the computor
 """
+
+import re
 
 class CommandLineInterface(object):
     """
@@ -9,7 +10,9 @@ class CommandLineInterface(object):
     """
     def __init__(self):
         """ Init the stack here """
-        return
+        self.get_variable = re.compile("^var(.*)=(.*)$")
+        self.get_function = re.compile("^func(.*)\((.*)\)=(.*)$")
+        #self.array_regex = re.compile("^var (.*) = (.*)$")
 
     def loop(self):
         """
@@ -21,12 +24,12 @@ class CommandLineInterface(object):
                 cmd = input()
             except EOFError:
                 break
-            if cmd == 'exit':
+            if cmd == 'exit' or cmd == 'e':
                 break
 
     def help(self):
         """
-        Affiche l'aide
+        Affiche l'aide de l'interface
         """
         print('Welcome to computor')
         print('You can assign variable by writting var [name] = [complexe value]')
