@@ -1,5 +1,6 @@
+from cli import CommandLineInterface
 
-"""
-Computor2
-"""
-print("Hello World")
+command = CommandLineInterface()
+
+command.help()
+command.loop()
