@@ -1,6 +1,4 @@
-from src.cli import CommandLineInterface
+from srcs.cli import CommandLineInterface
 
 command = CommandLineInterface()
-
-command.help()
 command.loop()
