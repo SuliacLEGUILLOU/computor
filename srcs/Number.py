@@ -9,6 +9,10 @@ class Number(object):
         self.real = 0
         self.imag = 0
 
+    def assign(self, r, i):
+        self.real = r
+        self.imag = i
+
     def add(self, target):
         """
         Add two Number
@@ -27,12 +31,14 @@ class Number(object):
         """
         Multiply two Number
         """
-        self.real = self.real * target.real - self.imag * target.imag
-        self.imag = self.imag * target.real + self.imag * target.real
+        real = self.real * target.real - self.imag * target.imag
+        self.imag = self.real * target.imag + self.imag * target.real
+        self.real = real
 
     def div(self, target):
         """
         Multiply two Number
         """
-        self.real = (self.real * target.real + self.imag * target.imag) / (target.real * target.real
+        real = (self.real * target.real + self.imag * target.imag) / (target.real * target.real)
         self.imag = self.imag * target.real + self.imag * target.real
+        self.real = real
