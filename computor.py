@@ -1,4 +1,4 @@
-from cli import CommandLineInterface
+from src.cli import CommandLineInterface
 
 command = CommandLineInterface()
 
